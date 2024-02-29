@@ -20,7 +20,7 @@ answer_list = {
 
 # 代理IP API提取链接 https://xip.ipzan.com/
 # 实际上不使用代理也可以，
-api = "https://service.ipzan.com/core-extract?num=1&no=20240228220128183994&minute=10&repeat=1&pool=quality&secret=lqeop7k8is0l12"
+api = "https://service.ipzan.com/core-extract"
 # User-Agent库， 分别是网页、手机、微信
 UA = ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0",
       "Mozilla/5.0 (Linux; Android 10; SEA-AL10 Build/HUAWEISEA-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/4313 MMWEBSDK/20220805 Mobile Safari/537.36 MMWEBID/9538 MicroMessenger/8.0.27.2220(0x28001B53) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64",

@@ -13,15 +13,14 @@ from selenium.webdriver import ActionChains
 import numpy
 
 
-
-# 选取答案
+# 选取简答题答案
 def select_answer(answer_list):
     length = len(answer_list)
     index = random.randint(0, length - 1)
     return answer_list[index]
 
 
-# 简答题题 type=2
+# 简答题 type=2
 def fill_blank(driver, id, answer_list, idx):
     xpath = '//*[@id="div{}"]/div[2]/textarea'.format(id)
     # text = select_answer(answerList)
@@ -90,7 +89,7 @@ def single_matrix_scale(driver, id, prob, idx, num):
         xpath = '//*[@id="drv{}_{}"]/td'.format(id, i)
         answers = driver.find_elements(By.XPATH, xpath)
         p = preprocess_prob(prob.get(idx), len(answers) - 1)
-        # 判断是浏览器还是QQ、微信
+        # 判断是浏览器还是QQ、微信，处理略有不同
         if num == 0:
             choice = numpy.random.choice(a=numpy.arange(1, len(answers)), p=p)
         else:
