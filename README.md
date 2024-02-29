@@ -8,6 +8,8 @@
 
 请安装所需的库：requests、numpy、Selenium
 
+本工具使用的是巨硬的Edge浏览器Driver ，应该不会有人电脑上没装这个浏览器吧
+
 1. 在config.py中设定问卷答案：
     
     ```python
