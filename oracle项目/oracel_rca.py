@@ -29,17 +29,25 @@ class OracleRpa:
                                {'source': 'Object.defineProperty(navigator, "webdriver", {get: () => undefined})'})
 
         driver.get(self.main_url)
-        # 创建显示等待对象
+
+        # 创建显示等待对象，等sso按钮加载出来
         wait_obj = WebDriverWait(driver, 10)
         wait_obj.until(
             expected_conditions.presence_of_element_located(
-                (By.CSS_SELECTOR, 'oj-button-label')
+                (By.XPATH, '//*[@id="idcs-signin-idp-signin-form"]/div')
             )
         )
-        buttons = driver.find_elements(By.CLASS_NAME, "oj-button-label")
-        print(len(buttons))
-        # sso_login_bn = buttons[1]
-        # sso_login_bn.click()
+        # sso登录
+        # sso_button = driver.find_element(By.XPATH, '//*[@id="idcs-signin-idp-signin-form"]/div')
+        # sso_button.click()
+
+        # 密码登录
+        uname_input = driver.find_element(By.XPATH, '//*[@id="idcs-signin-basic-signin-form-username"]')
+        uname_input.send_keys("kayotin")
+        pwd_input = driver.find_element(By.XPATH, '//*[@id="idcs-signin-basic-signin-form-password|input"]')
+        pwd_input.send_keys("123456")
+        pw_login_btn = driver.find_element(By.XPATH, '//*[@id="idcs-signin-basic-signin-form-submit"]/button')
+        pw_login_btn.click()
 
         input("按回车键关闭")
 
