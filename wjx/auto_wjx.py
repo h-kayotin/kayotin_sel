@@ -147,9 +147,10 @@ class MyWjx:
 
 if __name__ == '__main__':
     my_url = "https://www.wjx.cn/vm/rJoCZrn.aspx"
-    my_wjx = MyWjx(my_url, 10)
-    my_wjx.fill_in()
-    # my_wjx.do_works()
+    my_wjx = MyWjx(my_url, 2)
+    # my_wjx.fill_in() 做1份
+    # 多进程做多份
+    my_wjx.do_works()
 
 
         
